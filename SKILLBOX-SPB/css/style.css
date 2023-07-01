@@ -1,0 +1,697 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 35px;
+}
+
+.input {
+  border: none;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input[type=text]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.input[type=text]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.input[type="search"]::-webkit-search-decoration,
+.input[type="search"]::-webkit-search-cancel-button,
+.input[type="search"]::-webkit-search-results-button,
+.input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+
+.link,
+.link:hover {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.link:focus-visible {
+  outline: none;
+}
+
+.paragraph {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  -webkit-padding-start: 0;
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.btn {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.btn:focus-visible {
+  outline: none;
+}
+
+.btn:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.image {
+  vertical-align: top;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+:root {
+  --swiper-pagination-bullet-horizontal-gap: 10px;
+  --swiper-pagination-bullet-inactive-color: var(--white);
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-theme-color: #FACA47;
+  --swiper-pagination-bullet-width: 32px;
+  --swiper-pagination-bullet-height: 2px;
+  --white: #fff;
+  --black: #000;
+  --yellow: #FACA47;
+  --light-brown: #FDFAF4;
+  --brown: #AD2D11;
+  --dark-gray: #181515;
+
+}
+
+@font-face {
+  font-family: 'Prata';
+  src:
+    url('../fonts/Prata-Regular.woff2') format('woff2'),
+    url('../fonts/Prata-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src:
+    url('../fonts/Raleway-Medium.woff2') format('woff2'),
+    url('../fonts/Raleway-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src:
+    url('../fonts/Raleway-Regular.woff2') format('woff2'),
+    url('../fonts/Raleway-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src:
+    url('../fonts/Raleway-Light.woff2') format('woff2'),
+    url('../fonts/Raleway-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 1366px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 70px;
+  z-index: 10000;
+}
+
+.header__container {
+  padding: 0 195px;
+}
+
+.header__nav {
+  padding: 34px 60px 23px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.header__link {
+  position: relative;
+  transition: color .3s ease;
+}
+
+.header__link::before {
+  position: absolute;
+  content: '';
+  top: -10px;
+  right: -15px;
+  bottom: -10px;
+  left: -15px;
+}
+
+.header__link:hover {
+  color: var(--brown);
+}
+
+.header__link:active {
+  color: var(--yellow);
+}
+
+.header__link:focus-visible {
+  color: var(--yellow);
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero__content {
+  padding-top: 303px;
+  padding-bottom: 327px;
+  background-image: url(../img/hero-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero {
+  margin-top: -80px;
+}
+
+.hero .container {
+  background-color: var(--light-brown);
+  padding-bottom: 77px;
+}
+
+.hero__title {
+  font-family: 'Prata';
+  font-size: 48px;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--brown);
+}
+
+.hero__paragraph {
+  font-family: 'Raleway';
+  font-size: 24px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.title_medium {
+  margin-bottom: 55px;
+  padding-left: 95px;
+  font-family: 'Prata';
+  font-size: 32px;
+  line-height: 1.34;
+  color: var(--brown);
+}
+
+.about-city__container,
+.history .container,
+.budget .container {
+  padding: 124px 0;
+  background-color: var(--light-brown);
+}
+
+.about-city__content {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 140px;
+}
+
+.about-city__img {
+  width: 63.4%;
+}
+
+.about-city__paragraph {
+  width: 27%;
+  font-family: 'Raleway';
+  font-size: 18px;
+  line-height: 1.44;
+}
+
+.about-city__description {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 193px 150px 225px 95px;
+  font-family: 'Prata';
+  font-size: 32px;
+  line-height: 1.69;
+  z-index: 5;
+  background-color: var(--white);
+}
+
+.swiper-pagination-bullet-active {
+  color: var(--yellow);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 20px;
+  width: 56%;
+}
+
+.about-city__swiper-button-prev,
+.about-city__swiper-button-next {
+  position: absolute;
+  z-index: 5;
+  bottom: 100px;
+}
+
+.about-city__swiper-button-prev .swiper-pagination-circle,
+.about-city__swiper-button-prev .swiper-pagination-path,
+.about-city__swiper-button-next .swiper-pagination-circle,
+.about-city__swiper-button-next .swiper-pagination-path {
+  transition: stroke .3s ease;
+}
+
+.about-city__swiper-button-prev:hover .swiper-pagination-circle,
+.about-city__swiper-button-prev:hover .swiper-pagination-path,
+.about-city__swiper-button-next:hover .swiper-pagination-circle,
+.about-city__swiper-button-next:hover .swiper-pagination-path {
+  stroke: var(--yellow);
+}
+
+.about-city__swiper-button-prev:active .swiper-pagination-circle,
+.about-city__swiper-button-prev:active .swiper-pagination-path,
+.about-city__swiper-button-next:active .swiper-pagination-circle,
+.about-city__swiper-button-next:active .swiper-pagination-path {
+  stroke: var(--black);
+}
+
+.about-city__swiper-button-prev:focus-visible .swiper-pagination-circle,
+.about-city__swiper-button-prev:focus-visible .swiper-pagination-path,
+.about-city__swiper-button-next:focus-visible .swiper-pagination-circle,
+.about-city__swiper-button-next:focus-visible .swiper-pagination-path {
+  stroke: var(--black);
+}
+
+.about-city__swiper-button-prev {
+  right: 395px;
+}
+
+.about-city__swiper-button-next {
+  right: 295px;
+}
+
+.about-city__description::before {
+  content: url(../img/petr.png);
+  position: absolute;
+  top: 52px;
+  right: 166px;
+  z-index: 0;
+}
+
+.about-city__description::after {
+  position: absolute;
+  content: url(../img/vase.png);
+  left: 175px;
+  bottom: 20px;
+  z-index: 0;
+}
+
+.sights__paragraph {
+  margin-right: 0;
+  margin-left: auto;
+  margin-bottom: 180px;
+  padding-top: 102px;
+  padding-right: 95px;
+  width: 56.5%;
+  font-family: 'Raleway';
+  font-size: 18px;
+  line-height: 1.67;
+}
+
+.sights .container {
+  padding: 124px 0;
+  border-color: var(--white);
+}
+
+.sights__list {
+  padding-right: 95px;
+  padding-left: 95px;
+}
+
+.sights__list-item {
+  display: flex;
+  padding: 75px 0 100px;
+  border-top: 1px solid var(--yellow);
+}
+
+.sights__list-item:last-child {
+  padding-bottom: 55px;
+}
+
+.sights__heading {
+  width: 31.5%;
+  font-family: 'Prata';
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.sights__description {
+  width: 52%;
+  margin-top: -5px;
+  padding-left: 24px;
+  font-size: 16px;
+  line-height: 1.625;
+}
+
+.sights__description-paragraph:not(:last-child) {
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+
+.sights__img {
+  width: 32%;
+}
+
+.history__list {
+  display: flex;
+  flex-direction: column;
+  margin-top: -13px;
+  padding-right: 195px;
+  padding-left: 195px;
+  padding-bottom: 63px;
+  counter-reset: counter;
+}
+
+.history__list-item {
+  position: relative;
+  width: calc(50% + 0.5px);
+}
+
+.history__list-item::before {
+  content: counter(counter);
+  counter-increment: counter;
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Prata";
+  font-size: 18px;
+  line-height: 18px;
+  z-index: 2;
+  background-color: var(--yellow);
+  color: #fff;
+  border-radius: 100%;
+}
+
+.history__list-item:nth-child(odd):before {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.history__list-item:nth-child(even)::before {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.history__list-item:nth-child(odd) {
+  align-self: flex-end;
+}
+
+.history__list-item:nth-child(odd):not(:first-child) .history__heading {
+  border-left: 1px solid var(--yellow);
+}
+
+.history__list-item:nth-child(even):not(:first-child) .history__heading {
+  border-right: 1px solid var(--yellow);
+}
+
+.history__list-item:nth-child(odd):not(:last-child) .history__paragraph {
+  border-left: 1px solid var(--yellow);
+}
+
+.history__list-item:nth-child(even):not(:last-child) .history__paragraph {
+  border-right: 1px solid var(--yellow);
+}
+
+.history__list-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* .history__list-item:nth-child(even):not(:first-child):not(:last-child) {
+  border-right: 1px solid var(--yellow);
+}
+
+.history__list-item:last-child:nth-child(even) .history__heading {
+  border-right: 1px solid var(--yellow);
+}
+
+.history__list-item:last-child .history__paragraph {
+  border: none;
+} */
+
+.history__list-item {
+  display: flex;
+  align-items: center;
+}
+
+.history__heading {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 50%;
+  padding-bottom: 10px;
+  font-family: 'Prata';
+  font-size: 18px;
+  line-height: 1.333;
+  border-bottom: 1px solid var(--yellow);
+}
+
+.history__list-item:nth-child(odd) .history__heading,
+.history__list-item:nth-child(odd) .history__paragraph {
+  padding-left: 22px;
+}
+
+.history__list-item:nth-child(even) .history__heading,
+.history__list-item:nth-child(even) .history__paragraph {
+  padding-right: 22px;
+}
+
+.history__paragraph {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 50%;
+  padding-top: 12px;
+  font-family: 'Raleway';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+.history__list-item .history__heading,
+.history__list-item .history__paragraph {
+  min-height: 100px;
+}
+
+
+.history__image {
+  padding: 13px;
+  border: 1px solid var(--yellow);
+  border-radius: 50%;
+}
+
+.history__content {
+  min-width: 63%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.budget__content {
+  padding: 0 95px;
+}
+
+.budget__paragraph {
+  margin-right: 0;
+  margin-bottom: 243px;
+  margin-left: auto;
+  width: 57.5%;
+  font-family: 'Raleway';
+  font-size: 18px;
+  line-height: 1.667;
+}
+
+.budget__svg {
+  margin-bottom: 20px;
+}
+
+.budget-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.budget__list-item {
+  display: flex;
+  width: 23.5%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.budget__price {
+  padding: 5px;
+  font-family: 'Prata';
+  font-size: 22px;
+  line-height: 26px;
+  line-height: 1.182;
+}
+
+.budget__heading {
+  padding: 10px;
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.444;
+}
+
+.map>.container {
+  padding-top: 135px;
+  background-color: var(--light-brown);
+}
+
+.yandex-map {
+  width: 100%;
+  max-width: 1366px;
+  min-height: 476px;
+  margin: 0 auto;
+}
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+  filter: hue-rotate(-140deg) grayscale(50%);
+}
+
+.ymaps-2-1-79-copyright,
+.ymaps-2-1-79-gototaxi,
+.ymaps-2-1-79-gototech,
+.ymaps-2-1-79-gotoymaps {
+  visibility: hidden;
+}
+
+.footer>.container {
+  background-color: var(--black);
+  padding: 45px 95px 25px;
+  color: var(--light-brown);
+}
+
+.footer__left {
+  display: flex;
+  width: 50%;
+  align-items: flex-end;
+  gap: 60px;
+  font-family: 'Raleway';
+  font-size: 12px;
+  line-height: 1.17;
+}
+
+.footer__right {
+  margin-right: 0;
+  margin-left: auto;
+  margin-bottom: 19px;
+  width: 50%;
+  padding-left: 8px;
+  font-family: 'Raleway';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.1875;
+}
+
+.footer__list-item:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+.footer__list-item {
+  padding: 5px;
+}
+
+.footer__list {
+  columns: 2;
+  column-count: 2;
+}
+
+.footer__link:hover {
+  color: var(--yellow);
+}
+
+.footer__link:active {
+  color: var(--brown);
+}
+
+.footer__link:focus-visible {
+  color: var(--brown);
+}
+

@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blanchard</title>
+  <link href="img/favicon.svg" rel="icon">
+  <link href="https://unpkg.com/accordion-js@3.3.2/dist/accordion.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/simplebar@latest/dist/simplebar.css" rel="stylesheet">
+  <link href="libs/choices.min.css" rel="stylesheet">
+  <link href="libs/swiper-bundle.min.css" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    [class*="-ground-pane"] {
+      filter: grayscale(1);
+    }
+  </style>
+</head>
+
+<body class="body">
+  <div class="wrapper">
+    <header class="header" aria-roledescription="Шапка сайта">
+      <div class="header__top">
+        <div class="container">
+          <div class="header__content">
+            <button class="burger btn" aria-expanded="false" aria-label="Открыть меню">
+              <span class="burger__line burger__line_1"></span>
+              <span class="burger__line burger__line_2"></span>
+              <span class="burger__line burger__line_3"></span>
+              <span class="burger__line burger__line_4"></span>
+            </button>
+            <a class="link logo header__logo"><img class="image logo__image" src="img/svg/logo.svg"
+                alt="Логотип компании Бланчард"></a>
+            <div class="header__menu">
+              <nav class="header__nav nav">
+                <ul class="list nav__list">
+                  <li class="nav__list-item">
+                    <a class="link header__link" href="#about-us">
+                      <span class="header__link-text">О&nbsp;нас</span></a>
+                  </li>
+                  <li class="nav__list-item">
+                    <a class="link header__link" href="#gallery">
+                      <span class="header__link-text">Галерея</span></a>
+                  </li>
+                  <li class="nav__list-item">
+                    <a class="link header__link" href="#catalog" data-name="Каталог">
+                      <span class="header__link-text">Каталог</span>
+                    </a>
+                  </li>
+                  <li class="nav__list-item">
+                    <a class="link header__link" href="#events" data-name="События">
+                      <span class="header__link-text">События</span>
+                    </a>
+                  </li>
+                  <li class="nav__list-item">
+                    <a class="link header__link" href="#projects" data-name="Проекты">
+                      <span class="header__link-text">Проекты</span>
+                    </a>
+                  </li>
+                  <li class="nav__list-item">
+                    <a class="link header__link" href="#contacts">
+                      <span class="header__link-text">Контакты</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <a class="link header__login-link" href="#">
+                <span class="header__login-icon">
+                  <svg class="header__login-svg" width="18" height="13" viewBox="0 0 18 13" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="header__login-path"
+                      d="M9.62056 9.09278L10.6389 10.1111L14.25 6.5L10.6389 2.88889L9.62056 3.90722L11.4839 5.77778H0V7.22222H11.4839L9.62056 9.09278ZM16.0556 0H5.94444C5.14278 0 4.5 0.65 4.5 1.44444V4.33333H5.94444V1.44444H16.0556V11.5556H5.94444V8.66667H4.5V11.5556C4.5 12.35 5.14278 13 5.94444 13H16.0556C16.85 13 17.5 12.35 17.5 11.5556V1.44444C17.5 0.65 16.85 0 16.0556 0Z"
+                      fill="#fff"></path>
+                  </svg>
+                </span>
+                <span class="header__login-text">Войти</span>
+              </a>
+            </div>
+            <button class="btn header__search" aria-label="поиск">
+              <svg class="svg header__search-svg" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path class="header__loop-path" fill-rule="evenodd" clip-rule="evenodd"
+                  d="M16.0002 8C16.0002 11.3137 13.3139 14 10.0002 14C6.68648 14 4.00019 11.3137 4.00019 8C4.00019 4.68629 6.68648 2 10.0002 2C13.3139 2 16.0002 4.68629 16.0002 8ZM18.0002 8C18.0002 12.4183 14.4185 16 10.0002 16C8.15297 16 6.45197 15.3739 5.09782 14.3224L1.41617 18.0041L0.00195312 16.5898L3.68288 12.9089C2.62828 11.5537 2.00019 9.8502 2.00019 8C2.00019 3.58172 5.58191 0 10.0002 0C14.4185 0 18.0002 3.58172 18.0002 8Z"
+                  fill="white"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="search">
+          <form class="search__form" action="#">
+            <button class="btn search__btn" aria-label="поиск" type="submit">
+              <svg class="search__svg-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect class="search__rect" width="5.02605" height="1.25651"
+                  transform="matrix(-0.71131 0.702878 0.71131 0.702878 3.57422 11.5841)" fill="white"></rect>
+                <path class="search__path" fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8.75929 13.3207C5.45281 13.3207 2.89432 10.5994 2.89432 7.40037C2.89432 4.2013 5.45281 1.48007 8.75929 1.48007C12.0658 1.48007 14.6243 4.2013 14.6243 7.40037C14.6243 10.5994 12.0658 13.3207 8.75929 13.3207ZM8.75929 14.8007C4.76036 14.8007 1.51858 11.4875 1.51858 7.40037C1.51858 3.31326 4.76036 0 8.75929 0C12.7582 0 16 3.31326 16 7.40037C16 11.4875 12.7582 14.8007 8.75929 14.8007Z"
+                  fill="white"></path>
+              </svg>
+            </button>
+            <input class="input search__input" type="search">
+            <button class="btn search__close" aria-label="закрыть строку поиска" type="button">
+              <span class="search__close-line search__close-line1"></span>
+              <span class="search__close-line search__close-line2"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="header__bottom">
+        <div class="container">
+          <div class="header__content">
+            <nav class="header__submenu submenu">
+              <ul class="list submenu__list">
+                <li class="submenu__list-item">
+                  <button class="btn submenu__btn js-header-dropdown-btn" data-path="realism">
+                    <span class="submenu__btn-text">
+                      Реализм</span>
+                    <span class="submenu__arrow">
+                      <svg class="submenu__svg-icon" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="submenu__arrow-path" d="M11 1L6 6L1 1" stroke="white"></path>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="dropdown">
+                    <div class="submenu__dropdown dropdown__simplebar js-header-drop " data-simplebar="init"
+                      data-target="realism" tabindex="-1">
+                      <ul class="list dropdown__list">
+                        <li class="dropdown__item dropdown__realism dropdown__realism_1">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Тинторетто</span>
+                          </a>
+                        </li>
+                        <li class="dropdown__item dropdown__realism dropdown__realism_2">
+                          <a class="link dropdown__realism dropdown__link" href="#">
+                            <span class="dropdown__text">Фридрих</span>
+                          </a>
+                        </li>
+                        <li class="dropdown__item dropdown__realism dropdown__realism_3">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Леонардо</span>
+                          </a>
+                        </li>
+                        <li class="dropdown__item dropdown__realism dropdown__realism_4">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Верроккьо</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="submenu__list-item">
+                  <button class="btn submenu__btn" data-path="impressionism">
+                    <span class="submenu__btn-text">
+                      Импрессионизм</span>
+                    <span class="submenu__arrow">
+                      <svg class="submenu__svg-icon" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="submenu__arrow-path" d="M11 1L6 6L1 1" stroke="white"></path>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="dropdown">
+                    <div class="submenu__dropdown dropdown__simplebar" data-simplebar="init" data-target="impressionism"
+                      tabindex="-1">
+                      <ul class="list dropdown__list">
+                        <li class="dropdown__item dropdown__impressionism dropdown__impressionism_1">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Моне</span>
+                          </a>
+                        </li>
+                        <li class="dropdown__item dropdown__impressionism dropdown__impressionism_2">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Сислей</span>
+                          </a>
+                        </li>
+                        <li class="dropdown__item dropdown__impressionism dropdown__impressionism_3">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Мане</span>
+                          </a>
+                        </li>
+                        <li class="dropdown__item dropdown__impressionism dropdown__impressionism_4">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Ренуар</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="submenu__list-item">
+                  <button class="btn submenu__btn" data-path="postimpressionism">
+                    <span class="submenu__btn-text">
+                      Постимпрессионизм</span>
+                    <span class="submenu__arrow">
+                      <svg class="submenu__svg-icon" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="submenu__arrow-path" d="M11 1L6 6L1 1" stroke="white"></path>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="dropdown">
+                    <div class="submenu__dropdown dropdown__simplebar" data-simplebar="init"
+                      data-target="postimpressionism" tabindex="-1">
+                      <ul class="list dropdown__list">
+                        <li class="dropdown__item dropdown__postimpressionism dropdown__postimpressionism_1">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Ван Гог</span>
+                          </a>
+                        </li>
+                        <li class="dropdown__item dropdown__postimpressionism dropdown__postimpressionism_2">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Сезанн</span>
+                          </a>
+                        </li>
+                        <li class="dropdown__item dropdown__postimpressionism dropdown__postimpressionism_3">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Гоген</span>
+                          </a>
+                        </li>
+                        <li class="dropdown__item dropdown__postimpressionism dropdown__postimpressionism_4">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Сёра</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="submenu__list-item">
+                  <button class="btn submenu__btn" data-path="avantgarde">
+                    <span class="submenu__btn-text">
+                      Авангард</span>
+                    <span class="submenu__arrow">
+                      <svg class="submenu__svg-icon" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="submenu__arrow-path" d="M11 1L6 6L1 1" stroke="white"></path>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="dropdown">
+                    <div class="submenu__dropdown dropdown__simplebar" data-simplebar="init" data-target="avantgarde"
+                      tabindex="-1">
+                      <ul class="list dropdown__list">
+                        <li class="dropdown__item dropdown__avantgard dropdown__avantgard_1">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Кандинский</span></a>
+                        </li>
+                        <li class="dropdown__item dropdown__avantgard dropdown__avantgard_2">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Маринетти</span></a>
+                        </li>
+                        <li class="dropdown__item dropdown__avantgard dropdown__avantgard_3">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Малевич</span></a>
+                        </li>
+                        <li class="dropdown__item dropdown__avantgard dropdown__avantgard_4">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Пикассо</span></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="submenu__list-item">
+                  <button class="btn submenu__btn" data-path="futurism">
+                    <span class="submenu__btn-text">
+                      Футуризм</span>
+                    <span class="submenu__arrow">
+                      <svg class="submenu__svg-icon" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="submenu__arrow-path" d="M11 1L6 6L1 1" stroke="white"></path>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="dropdown">
+                    <div class="submenu__dropdown dropdown__simplebar" data-simplebar="init" data-target="futurism"
+                      tabindex="-1">
+                      <ul class="list dropdown__list">
+                        <li class="dropdown__item dropdown__futurism dropdown__futurism_1">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Карра</span></a>
+                        </li>
+                        <li class="dropdown__item dropdown__futurism dropdown__futurism_2">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Прателла</span>
+                          </a>
+                        </li>
+                        <li class="dropdown__item dropdown__futurism dropdown__futurism_3">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Северини</span>
+                          </a>
+                        </li>
+                        <li class="dropdown__item dropdown__futurism dropdown__futurism_4">
+                          <a class="link dropdown__link" href="#">
+                            <span class="dropdown__text">Балла</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+            <div class="search">
+              <form class="search__form" action="#">
+                <button class="btn search__btn" aria-label="поиск" type="submit">
+                  <svg class="search__svg-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect class="search__rect" width="5.02605" height="1.25651"
+                      transform="matrix(-0.71131 0.702878 0.71131 0.702878 3.57422 11.5841)" fill="white"></rect>
+                    <path class="search__path" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M8.75929 13.3207C5.45281 13.3207 2.89432 10.5994 2.89432 7.40037C2.89432 4.2013 5.45281 1.48007 8.75929 1.48007C12.0658 1.48007 14.6243 4.2013 14.6243 7.40037C14.6243 10.5994 12.0658 13.3207 8.75929 13.3207ZM8.75929 14.8007C4.76036 14.8007 1.51858 11.4875 1.51858 7.40037C1.51858 3.31326 4.76036 0 8.75929 0C12.7582 0 16 3.31326 16 7.40037C16 11.4875 12.7582 14.8007 8.75929 14.8007Z"
+                      fill="white"></path>
+                  </svg>
+                </button>
+                <input class="input search__input" type="search" placeholder="Поиск по сайту">
+                <button class="btn search__close" aria-label="закрыть строку поиска" type="button">
+                  <span class="search__close-line search__close-line1"></span>
+                  <span class="search__close-line search__close-line2"></span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="section hero">
+        <div class="hero__slider-wrapper">
+          <div class="hero__swiper swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide slide-1">
+              </div>
+              <div class="swiper-slide slide-2">
+              </div>
+              <div class="swiper-slide slide-3">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="hero__content">
+            <h1 class="title invisible">Блачард-художественная галерея</h1>
+            <h2 class="title hero__title" aria-label="Прикоснитесь к прекрасному">
+              Прикоснитесь
+              к прекрасному</h2>
+            <p class="paragraph hero__paragraph">Мы&nbsp;вынуждены отталкиваться
+              от&nbsp;того,
+              что
+              реализация намеченных
+              плановых
+              заданий
+              создаёт предпосылки для новых предложений</p>
+            <a href="#contacts" class="link hero__link">Подписаться на рассылку</a>
+          </div>
+        </div>
+
+      </section>
+      <section class="section about-us" id="about-us">
+        <div class="container">
+          <div class="about-us__content">
+            <h2 class="title heading">О&nbsp;нас</h2>
+            <p class="paragraph about-us__paragraph">Ясность нашей позиции очевидна: семантический разбор
+              внешних противодействий однозначно определяет каждого участника как способного принимать
+              собственные решения касаемо распределения внутренних резервов и&nbsp;ресурсов.
+              Не&nbsp;следует,
+              однако, забывать, что высококачественный прототип будущего проекта влечёт за&nbsp;собой
+              процесс
+              внедрения и&nbsp;модернизации модели развития. Повседневная практика показывает, что высокое
+              качество позиционных исследований создаёт необходимость включения в&nbsp;производственный
+              план
+              целого ряда внеочередных мероприятий с&nbsp;учётом комплекса распределения внутренних
+              резервов
+              и&nbsp;ресурсов. В&nbsp;рамках спецификации современных стандартов, действия представителей
+              оппозиции набирают популярность среди определённых слоёв населения, а&nbsp;значит, должны
+              быть
+              разоблачены.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section gallery" id="gallery">
+        <div class="gallery__body">
+          <div class="container">
+            <div class="gallery__flex-box">
+              <div class="gallery__block">
+                <h2 class="title heading gallery__title">Галерея </h2>
+                <form class="gallery__form form" action="#">
+                  <h3 class="title form__title">Фильтр:</h3>
+                  <select class="gallery__select">
+                    <option value="painting">Живопись</option>
+                    <option value="drawing">Рисунок</option>
+                    <option value="sculpture">Скульптура</option>
+                  </select>
+                </form>
+                <div class="periods">
+                  <div class="gallery__check">
+                    <label class="check">
+                      <input class="check__input" type="checkbox" aria-label="девятнадцатый век">
+                      <span class="check__box"></span>
+                      <span class="check__input-text">XIX век</span>
+                    </label>
+                  </div>
+                  <div class="gallery__check">
+                    <label class="check">
+                      <input class="check__input" type="checkbox" checked aria-label="двадцатый век">
+                      <span class="check__box"></span>
+                      <span class="check__input-text">XX век</span>
+                    </label>
+                  </div>
+                  <div class="gallery__check">
+                    <label class="check">
+                      <input class="check__input" type="checkbox" aria-label="современность">
+                      <span class="check__box"></span>
+                      <span class="check__input-text">Современность</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="gallery__swiper swiper">
+                <div class="swiper-wrapper gallery__swiper-wrapper">
+                  <div class="swiper-slide">
+                    <button class="btn gallery__btn-slide" data-path="woman-with-rake">
+                      <picture class="gallery__picture image">
+                        <source media="(max-width:320px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-320-1.jpg, img/gallery/gallery__pictures/gallery__picture-320-1@2x.jpg 2x">
+                        <source media="(max-width:768px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-768-1.jpg, img/gallery/gallery__pictures/gallery__picture-768-1@2x.jpg 2x">
+                        <source media="(max-width:1024px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-1024-1.jpg, img/gallery/gallery__pictures/gallery__picture-1024-1@2x.jpg 2x">
+                        <source media="(min-width:1025px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-1920-1.jpg, img/gallery/gallery__pictures/gallery__picture-1920-1@2x.jpg 2x">
+                        <img class="gallery__img image" src="img/gallery/gallery__pictures/gallery__picture-1920-1.jpg"
+                          alt="фото картины">
+                      </picture>
+                    </button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button class="btn gallery__btn-slide">
+                      <picture class="gallery__picture image">
+                        <source media="(max-width:320px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-320-2.jpg, img/gallery/gallery__pictures/gallery__picture-320-2@2x.jpg 2x">
+                        <source media="(max-width:768px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-768-2.jpg, img/gallery/gallery__pictures/gallery__picture-768-2@2x.jpg 2x">
+                        <source media="(max-width:1024px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-1024-2.jpg, img/gallery/gallery__pictures/gallery__picture-1024-2@2x.jpg 2x">
+                        <source media="(min-width:1025px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-1920-2.jpg, img/gallery/gallery__pictures/gallery__picture-1920-2@2x.jpg 2x">
+                        <img class="gallery__img image" src="img/gallery/gallery__pictures/gallery__picture-1920-2.jpg"
+                          alt="фото картины">
+                      </picture>
+                    </button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button class="btn gallery__btn-slide">
+                      <picture class="gallery__picture image">
+                        <source media="(max-width:320px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-320-3.jpg, img/gallery/gallery__pictures/gallery__picture-320-3@2x.jpg 2x">
+                        <source media="(max-width:768px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-768-3.jpg, img/gallery/gallery__pictures/gallery__picture-768-3@2x.jpg 2x">
+                        <source media="(max-width:1024px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-1024-3.jpg, img/gallery/gallery__pictures/gallery__picture-1024-3@2x.jpg 2x">
+                        <source media="(min-width:1025px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-1920-3.jpg, img/gallery/gallery__pictures/gallery__picture-1920-3@2x.jpg 2x">
+                        <img class="gallery__img image" src="img/gallery/gallery__pictures/gallery__picture-1920-3.jpg"
+                          alt="фото картины">
+                      </picture>
+                    </button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button class="btn gallery__btn-slide">
+                      <picture class="gallery__picture image">
+                        <source media="(max-width:320px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-320-4.jpg, img/gallery/gallery__pictures/gallery__picture-320-4@2x.jpg 2x">
+                        <source media="(max-width:768px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-768-4.jpg, img/gallery/gallery__pictures/gallery__picture-768-4@2x.jpg 2x">
+                        <source media="(max-width:1024px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-1024-4.jpg, img/gallery/gallery__pictures/gallery__picture-1024-4@2x.jpg 2x">
+                        <source media="(min-width:1025px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-1920-4.jpg, img/gallery/gallery__pictures/gallery__picture-1920-4@2x.jpg 2x">
+                        <img class="gallery__img image" src="img/gallery/gallery__pictures/gallery__picture-1920-4.jpg"
+                          alt="фото картины">
+                      </picture>
+                    </button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button class="btn gallery__btn-slide">
+                      <picture class="gallery__picture image">
+                        <source media="(max-width:320px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-320-5.jpg, img/gallery/gallery__pictures/gallery__picture-320-5@2x.jpg 2x">
+                        <source media="(max-width:768px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-768-5.jpg, img/gallery/gallery__pictures/gallery__picture-768-5@2x.jpg 2x">
+                        <source media="(max-width:1024px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-1024-5.jpg, img/gallery/gallery__pictures/gallery__picture-1024-5@2x.jpg 2x">
+                        <source media="(min-width:1025px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-1920-5.jpg, img/gallery/gallery__pictures/gallery__picture-1920-5@2x.jpg 2x">
+                        <img class="gallery__img image" src="img/gallery/gallery__pictures/gallery__picture-1920-5.jpg"
+                          alt="фото картины">
+                      </picture>
+                    </button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button class="btn gallery__btn-slide">
+                      <picture class="gallery__picture image">
+                        <source media="(max-width:320px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-320-6.jpg, img/gallery/gallery__pictures/gallery__picture-320-6@2x.jpg 2x">
+                        <source media="(max-width:768px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-768-6.jpg, img/gallery/gallery__pictures/gallery__picture-768-6@2x.jpg 2x">
+                        <source media="(max-width:1024px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-1024-6.jpg, img/gallery/gallery__pictures/gallery__picture-1024-6@2x.jpg 2x">
+                        <source media="(min-width:1025px)" type="image/jpg"
+                          srcset="img/gallery/gallery__pictures/gallery__picture-1920-6.jpg, img/gallery/gallery__pictures/gallery__picture-1920-6@2x.jpg 2x">
+                        <img class="gallery__img image" src="img/gallery/gallery__pictures/gallery__picture-1920-6.jpg"
+                          alt="фото картины">
+                      </picture>
+                    </button>
+                  </div>
+                </div>
+                <div class="btn swiper-button-prev gallery__button-prev"></div>
+                <div class="btn swiper-button-next gallery__button-next"></div>
+                <div class="swiper-pagination gallery__pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section catalog" id="catalog">
+        <div class="container">
+          <h2 class="title heading">Каталог</h2>
+          <p class="paragraph catalog__paragraph">Акционеры крупнейших компаний, которые представляют собой
+            яркий пример
+            континентально-европейского типа политической культуры, будут объявлены нарушающими
+            общечеловеческие нормы этики и&nbsp;морали. Являясь всего лишь частью общей картины, стремящиеся
+            вытеснить традиционное производство, нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом
+            либералов, которые жаждут быть функционально разнесены на&nbsp;независимые элементы. </p>
+
+          <div class="catalog__wrap tabs-wrap">
+            <ul class="list accordion catalog__list">
+              <li class="ac accordion__list-item is-active">
+                <button class="btn accordion__top ac-trigger" aria-expanded="false"
+                  aria-label="с тысяча четырёхсотого по тысяча четыреста девяноста девятый годы">
+                  <span class="title accordion__title"><span class="title__text">С 1400 по 1499 гг</span></span>
+                  <span class="accordion__icon">
+                    <svg class="accordion__svg-icon" width="18" height="11" viewBox="0 0 18 11" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" stroke="black"></path>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__bottom ac-panel ac-panel">
+                  <ul class="list artists">
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#ben-bin" data-path="ben-bin">
+                        <span class="artists__btn-text">Бенедетто
+                          ди Биндо</span>
+                      </a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#ber-amb" data-path="ber-amb">
+                        <span class="artists__btn-text">
+                          Бергоньоне,
+                          Амброджо
+                        </span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#bis-fra" data-path="bis-fra">
+                        <span class="artists__btn-text">
+                          Биссоло,
+                          Франческо
+                        </span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#bol-djo" data-path="bol-djo"><span
+                          class="artists__btn-text">Больтраффио,
+                          Джованни
+                        </span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#bon-fra" data-path="bon-fra">
+                        <span class="artists__btn-text">Бонсиньори,
+                          Франческо
+                        </span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#bot-raf" data-path="bot-raf">
+                        <span class="artists__btn-text">Боттичини,
+                          Рафаэлло</span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#bram" data-path="bram">
+                        <span class="artists__btn-text">Брамантино
+                        </span>
+                      </a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#bre-lud" data-path="bre-lud">
+                        <span class="artists__btn-text">Бреа,
+                          Людовико</span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#bia-ant-tu" data-path="bia-ant-tu">
+                        <span class="artists__btn-text">
+                          Бьяджо д’Антонио Туччи
+                        </span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#vek" data-path="vek">
+                        <span class="artists__btn-text">Веккьетта</span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#and-ver" data-path="and-ver">
+                        <span class="artists__btn-text">Андреа
+                          Верроккьо</span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn artists__btn active" href="#dom-ghir"
+                        data-path="dom-ghir">
+                        <span class="artists__btn-text">Доменико Гирландайо</span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#ben-goz" data-path="ben-goz"><span
+                          class="artists__btn-text">Беноццо
+                          Гоццоли</span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#gra-fra" data-path="gra-fra"><span
+                          class="artists__btn-text">Граначчи,
+                          Франческо</span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#gre-chi" data-path="gre-chi">
+                        <span class="artists__btn-text">Грегорио
+                          ди Чекко
+                        </span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#djo-udi" data-path="djo-udi">
+                        <span class="artists__btn-text">Джованни
+                          да Удине
+                        </span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#djo-pao" data-path="djo-pao">
+                        <span class="artists__btn-text">Джованни
+                          ди Паоло
+                        </span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#djor" data-path="djor">
+                        <span class="artists__btn-text">Джорджоне
+                        </span>
+                      </a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#par-ber" data-path="par-ber">
+                        <span class="artists__btn-text">Парентино,
+                          Бернардо</span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#pezel" data-path="pezel">
+                        <span class="artists__btn-text">Пезеллино</span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#pie-per" data-path="pie-per"><span
+                          class="artists__btn-text">Пьетро
+                          Перуджино</span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#per-bal" data-path="per-bal">
+                        <span class="artists__btn-text">Перуцци,
+                          Бальдассаре</span></a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#pisan" data-path="pisan">
+                        <span class="artists__btn-text">Пизанелло
+                        </span>
+                      </a>
+                    </li>
+                    <li class="artists__list-item">
+                      <a class="link artists__link artists__btn" href="#pintur" data-path="pintur">
+                        <span class="artists__btn-text">Пинтуриккьо</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="ac accordion__list-item">
+                <button class=" btn accordion__top ac-trigger"
+                  aria-label="с тысяча пятисотого по тысяча пятьсот девяноста девятый годы">
+                  <span class="title accordion__title">
+                    <span class="title__text">С 1500 по 1599 гг</span>
+                  </span>
+                  <span class="accordion__icon">
+                    <svg class="accordion__svg-icon" width="18" height="11" viewBox="0 0 18 11" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" stroke="black"></path>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__bottom ac-panel">
+                  <div class="accordion__card">
+                    <div class="accordion__empty-block">
+                      <picture class="accordion__picture">
+                        <source media="(max-width:320px)" type="image/jpg" srcset="img/catalog-img/empty-img-320.jpg">
+                        <source media="(max-width:768px)" type="image/jpg" srcset="img/catalog-img/empty-img-768.jpg">
+                        <source media="(max-width:1024px)" type="image/jpg" srcset="img/catalog-img/empty-img-1024.jpg">
+                        <source media="(min-width:1200px)" type="image/jpg" srcset="img/catalog-img/empty-img-1920.jpg">
+                        <img class="image" src="img/catalog-img/empty-img-1920.jpg" alt="иллюстрация">
+                      </picture>
+                    </div>
+                    <div class="accordion__card-info">
+                      <h3 class="title accordion__card-title">Здесь пока пусто</h3>
+                      <p class="paragraph accordion__paragraph">А в галерее вы всегда можете найти
+                        что-то интересное для себя</p>
+                      <a class="link gallery-link" href="#gallery">
+                        <span class="gallery-link__link-text">В галерею</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="ac accordion__list-item">
+                <button class=" btn accordion__top ac-trigger"
+                  aria-label="с тысяча шестисотого по тысяча шестьсот девяноста девятый годы">
+                  <span class="title accordion__title"><span class="title__text">С 1600 по 1699 гг
+                    </span></span>
+                  <span class="accordion__icon">
+                    <svg class="accordion__svg-icon" width="18" height="11" viewBox="0 0 18 11" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" stroke="black"></path>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__bottom ac-panel">
+                  <div class="accordion__card">
+                    <div class="accordion__empty-block">
+                      <picture class="accordion__picture">
+                        <source media="(max-width:320px)" type="image/jpg" srcset="img/catalog-img/empty-img-320.jpg">
+                        <source media="(max-width:768px)" type="image/jpg" srcset="img/catalog-img/empty-img-768.jpg">
+                        <source media="(max-width:1024px)" type="image/jpg" srcset="img/catalog-img/empty-img-1024.jpg">
+                        <source media="(min-width:1200px)" type="image/jpg" srcset="img/catalog-img/empty-img-1920.jpg">
+                        <img class="image" src="img/catalog-img/empty-img-1920.jpg" alt="иллюстрация">
+                      </picture>
+                    </div>
+                    <div class="accordion__card-info">
+                      <h3 class="title accordion__card-title">Здесь пока пусто</h3>
+                      <p class="paragraph accordion__paragraph">А в галерее вы всегда можете найти
+                        что-то интересное для себя</p>
+                      <a class="link gallery-link" href="#gallery">
+                        <span class="gallery-link__link-text">В галерею</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="ac accordion__list-item">
+                <button class=" btn accordion__top ac-trigger"
+                  aria-label="с тысяча семисотого по тысяча семьсот девяноста девятый годы">
+                  <span class="title accordion__title"><span class="title__text">С 1700 по 1799 гг</span></span>
+                  <span class="accordion__icon">
+                    <svg class="accordion__svg-icon" width="18" height="11" viewBox="0 0 18 11" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" stroke="black"></path>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__bottom ac-panel">
+                  <div class="accordion__card">
+                    <div class="accordion__empty-block">
+                      <picture class="accordion__picture">
+                        <source media="(max-width:320px)" type="image/jpg" srcset="img/catalog-img/empty-img-320.jpg">
+                        <source media="(max-width:768px)" type="image/jpg" srcset="img/catalog-img/empty-img-768.jpg">
+                        <source media="(max-width:1024px)" type="image/jpg" srcset="img/catalog-img/empty-img-1024.jpg">
+                        <source media="(min-width:1200px)" type="image/jpg" srcset="img/catalog-img/empty-img-1920.jpg">
+                        <img class="image" src="img/catalog-img/empty-img-1920.jpg" alt="иллюстрация">
+                      </picture>
+                    </div>
+                    <div class="accordion__card-info">
+                      <h3 class="title accordion__card-title">Здесь пока пусто</h3>
+                      <p class="paragraph accordion__paragraph">А в галерее вы всегда можете найти
+                        что-то интересное для себя</p>
+                      <a class="link gallery-link" href="#gallery">
+                        <span class="gallery-link__link-text">В галерею</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="ac accordion__list-item">
+                <button class=" btn accordion__top ac-trigger"
+                  aria-label="с тысяча восьмисотого по тысяча восемьсот девяноста девятый годы">
+                  <span class="title accordion__title"><span class="title__text">С 1800 по 1899 гг</span></span>
+                  <span class="accordion__icon">
+                    <svg class="accordion__svg-icon" width="18" height="11" viewBox="0 0 18 11" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" stroke="black"></path>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__bottom ac-panel">
+                  <div class="accordion__card">
+                    <div class="accordion__empty-block">
+                      <picture class="accordion__picture">
+                        <source media="(max-width:320px)" type="image/jpg" srcset="img/catalog-img/empty-img-320.jpg">
+                        <source media="(max-width:768px)" type="image/jpg" srcset="img/catalog-img/empty-img-768.jpg">
+                        <source media="(max-width:1024px)" type="image/jpg" srcset="img/catalog-img/empty-img-1024.jpg">
+                        <source media="(min-width:1200px)" type="image/jpg" srcset="img/catalog-img/empty-img-1920.jpg">
+                        <img class="image" src="img/catalog-img/empty-img-1920.jpg" alt="иллюстрация">
+                      </picture>
+                    </div>
+                    <div class="accordion__card-info">
+                      <h3 class="title accordion__card-title">Здесь пока пусто</h3>
+                      <p class="paragraph accordion__paragraph">А в галерее вы всегда можете найти
+                        что-то интересное для себя</p>
+                      <a class="link gallery-link" href="#gallery">
+                        <span class="gallery-link__link-text">В галерею</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="ac accordion__list-item">
+                <button class=" btn accordion__top ac-trigger"
+                  aria-label="с тысяча девятисотого по тысяча девятьсот девяноста девятый годы">
+                  <span class="title accordion__title"><span class="title__text">С 1900 по 1999
+                      гг</span></span>
+                  <span class="accordion__icon">
+                    <svg class="accordion__svg-icon" width="18" height="11" viewBox="0 0 18 11" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" stroke="black"></path>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__bottom ac-panel">
+                  <div class="accordion__card">
+                    <div class="accordion__empty-block">
+                      <picture class="accordion__picture">
+                        <source media="(max-width:320px)" type="image/jpg" srcset="img/catalog-img/empty-img-320.jpg">
+                        <source media="(max-width:768px)" type="image/jpg" srcset="img/catalog-img/empty-img-768.jpg">
+                        <source media="(max-width:1024px)" type="image/jpg" srcset="img/catalog-img/empty-img-1024.jpg">
+                        <source media="(min-width:1200px)" type="image/jpg" srcset="img/catalog-img/empty-img-1920.jpg">
+                        <img class="image" src="img/catalog-img/empty-img-1920.jpg" alt="иллюстрация">
+                      </picture>
+                    </div>
+                    <div class="accordion__card-info">
+                      <h3 class="title accordion__card-title">Здесь пока пусто</h3>
+                      <p class="paragraph accordion__paragraph">А в галерее вы всегда можете найти
+                        что-то интересное для себя</p>
+                      <a class="link gallery-link" href="#gallery">
+                        <span class="gallery-link__link-text">В галерею</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="ac accordion__list-item">
+                <button class="btn accordion__top ac-trigger" aria-label="с двухтысячного года">
+                  <span class="title accordion__title"><span class="title__text">С 2000 г</span></span>
+                  <span class="accordion__icon">
+                    <svg class="accordion__svg-icon" width="18" height="11" viewBox="0 0 18 11" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" stroke="black"></path>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__bottom ac-panel">
+                  <div class="accordion__card">
+                    <div class="accordion__empty-block">
+                      <picture class="accordion__picture">
+                        <source media="(max-width:320px)" type="image/jpg" srcset="img/catalog-img/empty-img-320.jpg">
+                        <source media="(max-width:768px)" type="image/jpg" srcset="img/catalog-img/empty-img-768.jpg">
+                        <source media="(max-width:1024px)" type="image/jpg" srcset="img/catalog-img/empty-img-1024.jpg">
+                        <source media="(min-width:1200px)" type="image/jpg" srcset="img/catalog-img/empty-img-1920.jpg">
+                        <img class="image" src="img/catalog-img/empty-img-1920.jpg" alt="иллюстрация">
+                      </picture>
+                    </div>
+                    <div class="accordion__card-info">
+                      <h3 class="title accordion__card-title">Здесь пока пусто</h3>
+                      <p class="paragraph accordion__paragraph">А в галерее вы всегда можете найти
+                        что-то интересное для себя</p>
+                      <a class="link gallery-link" href="#gallery">
+                        <span class="gallery-link__link-text">В галерею</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="tabs">
+              <div class="tabs__item" id="ben-bin" data-target="ben-bin">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="ber-amb" data-target="ber-amb">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="bis-fra" data-target="bis-fra">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="bol-djo" data-target="bol-djo">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="bon-fra" data-target="bon-fra">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="bot-raf" data-target="bot-raf">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="bram" data-target="bram">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="bre-lud" data-target="bre-lud">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="bia-ant-tu" data-target="bia-ant-tu">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="vek" data-target="vek">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="and-ver" data-target="and-ver">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item active" id="dom-ghir" data-target="dom-ghir">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/dom-ghir-320.jpg, img/catalog-img/dom-ghir-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/dom-ghir-768.jpg, img/catalog-img/dom-ghir-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/dom-ghir-1024.jpg, img/catalog-img/dom-ghir-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/dom-ghir-1920.jpg, img/catalog-img/dom-ghir-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/dom-ghir-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Доменико Гирландайо</h4>
+                  <div class="tabs__timeframe">2 июня 1448 — 11 января 1494</div>
+                  <p class="paragraph tabs__paragraph">Один из&nbsp;ведущих флорентийских
+                    художников Кватроченто, основатель художественной династии, которую продолжили
+                    его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный
+                    Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор
+                    фресковых циклов, в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями
+                    показана домашняя жизнь библейских персонажей (в&nbsp;их&nbsp;роли выступают
+                    знатные граждане Флоренции в&nbsp;костюмах того времени).
+                  </p>
+                </div>
+              </div>
+              <div class="tabs__item" id="ben-goz" data-target="ben-goz">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="gra-fra" data-target="gra-fra">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="gre-chi" data-target="gre-chi">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="djo-udi" data-target="djo-udi">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="djo-pao" data-target="djo-pao">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="djor" data-target="djor">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="par-ber" data-target="par-ber">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="pezel" data-target="pezel">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="pie-per" data-target="pie-per">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="per-bal" data-target="per-bal">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="pisan" data-target="pisan">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+              <div class="tabs__item" id="pintur" data-target="pintur">
+                <div class="tabs__card">
+                  <picture class="tabs__picture image">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-320.jpg, img/catalog-img/artist-img-320@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-768.jpg, img/catalog-img/artist-img-768@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1024.jpg, img/catalog-img/artist-img-1024@2x.jpg 2x">
+                    <source media="(min-width:1200px)" type="image/jpg"
+                      srcset="img/catalog-img/artist-img-1920.jpg, img/catalog-img/artist-img-1920@2x.jpg 2x">
+                    <img class="image" src="img/catalog-img/artist-img-1920.jpg" alt="фото художника">
+                  </picture>
+                  <h4 class="title tabs__title">Что мы&nbsp;о&nbsp;нём знаем?</h4>
+                  <p class="paragraph tabs__paragraph">Пока ничего... Зато
+                    мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                  </p>
+                  <a class="link gallery-link" href="#gallery">
+                    <span class="gallery-link__link-text">В галерею</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section events" id="events">
+        <div class="container">
+          <h2 class="title heading">События</h2>
+          <div class="swiper events__swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <article class="events__card">
+                  <picture class="events__picture">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/events/events__picture-320-1.jpg, img/events/events__picture-320-1@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/events/events__picture-768-1.jpg, img/events/events__picture-768-1@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/events/events__picture-320-1.jpg, img/events/events__picture-320-1@2x.jpg 2x">
+                    <source media="(min-width:1025px)" type="image/jpg"
+                      srcset="img/events/events__picture-1920-1.jpg, img/events/events__picture-1920-1@2x.jpg 2x">
+                    <img class="events__img" src="img/events/events__pictures/events__picture-1920-1.jpg" alt="гравюра">
+                  </picture>
+                  <div class="events__card-info">
+                    <address class="events__address">Музей им. Щусева
+                    </address>
+                    <div class="events__time"><time datetime="2023-03-20">с&nbsp;20&nbsp;марта
+                      </time><time datetime="2023-04-30">по&nbsp;30&nbsp;апреля</time></div>
+                    <h3 class="title events__title">Книжная гравюра в&nbsp;живом восприятии
+                    </h3>
+                    <p class="paragraph events__paragraph">Один из&nbsp;ведущих флорентийских
+                      художников Кватроченто, основатель художественной династии, которую
+                      продолжили его брат Давид и&nbsp;сын Ридольфо</p>
+                  </div>
+                  <a class="link events__link" href="#">
+                    <span class="events__link-text">Подробнее</span></a>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="events__card">
+                  <picture class="events__picture">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/events/events__picture-320-2.jpg, img/events/events__picture-320-2@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/events/events__picture-768-2.jpg, img/events/events__picture-768-2@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/events/events__picture-320-2.jpg, img/events/events__picture-320-2@2x.jpg 2x">
+                    <source media="(min-width:1025px)" type="image/jpg"
+                      srcset="img/events/events__picture-1920-2.jpg, img/events/events__picture-1920-2@2x.jpg 2x">
+                    <img class="events__img" src="img/events/events__pictures/events__picture-1920-2.jpg"
+                      alt="фото Петрова и Ильина">
+                  </picture>
+                  <div class="events__card-info">
+                    <address class="events__address">ММОМА
+                    </address>
+                    <div class="events__time">
+                      <time datetime="2023-03-24 19:00">24 марта 19:00</time>
+                    </div>
+                    <h3 class="title events__title">&laquo;Открытая дискуссия&raquo;. Дмитрий
+                      Петров и&nbsp;Сергей Ильин.</h3>
+                    <p class="paragraph events__paragraph">Высокий уровень вовлечения
+                      представителей целевой аудитории является чётким доказательством
+                      простого факта</p>
+                  </div>
+                  <a class="link events__link" href="#">
+                    <span class="events__link-text">Подробнее</span></a>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="events__card">
+                  <picture class="events__picture">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/events/events__picture-320-3.jpg, img/events/events__picture-320-3@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/events/events__picture-768-3.jpg, img/events/events__picture-768-3@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/events/events__picture-320-3.jpg, img/events/events__picture-320-3@2x.jpg 2x">
+                    <source media="(min-width:1025px)" type="image/jpg"
+                      srcset="img/events/events__picture-1920-3.jpg, img/events/events__picture-1920-3@2x.jpg 2x">
+                    <img class="events__img image" src="img/events/events__pictures/events__picture-1920-3.jpg"
+                      alt="Выставка Формация 2020">
+                  </picture>
+                  <div class="events__card-info">
+                    <address class="events__address">Еврейский музей
+                    </address>
+                    <div class="events__time">
+                      <time datetime="2023-03-31">с&nbsp;31&nbsp;марта по </time>
+                      <time datetime="2023-04-21">&nbsp;21&nbsp;апреля</time>
+                    </div>
+                    <h3 class="title events__title">Выставка &laquo;Формация 2020&raquo;</h3>
+                    <p class="paragraph events__paragraph">Идейные соображения высшего порядка,
+                      а&nbsp;также современная методология разработки играет важную роль
+                      в&nbsp;формировании глубокомысленных рассуждений</p>
+                  </div>
+                  <a class="link events__link" href="#">
+                    <span class="events__link-text">Подробнее</span></a>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="events__card">
+                  <picture class="events__picture">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/events/events__picture-320-4.jpg, img/events/events__picture-320-4@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/events/events__picture-768-4.jpg, img/events/events__picture-768-4@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/events/events__picture-320-4.jpg, img/events/events__picture-320-4@2x.jpg 2x">
+                    <source media="(min-width:1025px)" type="image/jpg"
+                      srcset="img/events/events__picture-1920-4.jpg, img/events/events__picture-1920-4@2x.jpg 2x">
+                    <img class="events__img" src="img/events/events__pictures/events__picture-1920-4.jpg" alt="Фотографии из серии
+											Метафора">
+                  </picture>
+                  <div class="events__card-info">
+                    <address class="events__address">ММАМ
+                    </address>
+                    <div class="events__time">
+                      <time datetime="2023-04-08">с&nbsp;8&nbsp;апреля</time>
+                      <time datetime="2023-05-20">по&nbsp;20&nbsp;мая</time>
+                    </div>
+                    <h3 class="title events__title">Джон Винзор. Фотографии из&nbsp;серии
+                      &laquo;Метафора&raquo;</h3>
+                    <p class="paragraph events__paragraph">Один из&nbsp;ведущих флорентийских
+                      художников Кватроченто, основатель художественной династии, которую
+                      продолжили его брат Давид и&nbsp;сын Ридольфо</p>
+                  </div>
+                  <a class="link events__link" href="#">
+                    <span class="events__link-text">Подробнее</span></a>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="events__card">
+                  <picture class="events__picture">
+                    <source media="(max-width:320px)" type="image/jpg"
+                      srcset="img/events/events__picture-320-5.jpg, img/events/events__picture-320-5@2x.jpg 2x">
+                    <source media="(max-width:768px)" type="image/jpg"
+                      srcset="img/events/events__picture-768-5.jpg, img/events/events__picture-768-5@2x.jpg 2x">
+                    <source media="(max-width:1024px)" type="image/jpg"
+                      srcset="img/events/events__picture-320-5.jpg, img/events/events__picture-320-5@2x.jpg 2x">
+                    <source media="(min-width:1025px)" type="image/jpg"
+                      srcset="img/events/events__picture-1920-5.jpg, img/events/events__picture-1920-5@2x.jpg 2x">
+                    <img class="events__img" src="img/events/events__pictures/events__picture-1920-5.jpg"
+                      alt="Третьяковка на Крымском валу">
+                  </picture>
+                  <div class="events__card-info">
+                    <address class="events__address">Третьяковка на&nbsp;Крымском валу
+                    </address>
+                    <div class="events__time">
+                      <time datetime="2023-03-30">с&nbsp;30&nbsp;марта </time>
+                      <time datetime="2023-04-30">по&nbsp;30&nbsp;апреля</time>
+                    </div>
+                    <h3 class="title events__title">XXIV Международная биеннале молодого
+                      искусства</h3>
+                    <p class="paragraph events__paragraph">Внезапно, реплицированные
+                      с&nbsp;зарубежных источников, современные исследования</p>
+                  </div>
+                  <a class="link events__link" href="#">
+                    <span class="events__link-text">Подробнее</span></a>
+                </article>
+              </div>
+              <div class="swiper-slide events__invisible-slide">
+              </div>
+            </div>
+            <div class="swiper-button-prev events__button-prev"></div>
+            <div class="swiper-button-next events__button-next"></div>
+            <div class="swiper-pagination events__pagination"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section projects" id="projects">
+        <div class="container">
+          <h2 class="title heading">Проекты</h2>
+          <p id="tooltips" class="paragraph projects__paragraph">Предварительные выводы: постоянное
+            информационно-пропагандистское обеспечение
+            нашей деятельности
+            однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые
+            государства смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершённой
+            неузнаваемости,
+            из-за чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное
+            информационно-пропагандистское <span></span><button class="btn tooltip projects__tooltip-btn"
+              data-tippy-content="Пример современных тенденций — современная методология разработки"
+              aria-label="всплывающее окно">
+              <svg class="marker" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.5 8C15.5 12.1421 12.1421 15.5 8 15.5C3.85786 15.5 0.5 12.1421 0.5 8C0.5 3.85786 3.85786 0.5 8 0.5C12.1421 0.5 15.5 3.85786 15.5 8Z"
+                  stroke="#9D5CD0"></path>
+                <path class="marker__path"
+                  d="M7.26154 6.4551H8.73846V13H7.26154V6.4551ZM8 4.90259C7.71282 4.90259 7.4718 4.81126 7.27692 4.62861C7.09231 4.44597 7 4.22273 7 3.9589C7 3.69508 7.09231 3.47184 7.27692 3.28919C7.4718 3.0964 7.71282 3 8 3C8.28718 3 8.52308 3.09132 8.70769 3.27397C8.90256 3.44647 9 3.66464 9 3.92846C9 4.20243 8.90256 4.43582 8.70769 4.62861C8.52308 4.81126 8.28718 4.90259 8 4.90259Z"
+                  fill="black"></path>
+              </svg>
+              <svg class="close-tooltip" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8 16.001C12.4183 16.001 16 12.4193 16 8.00098C16 3.5827 12.4183 0.000976562 8 0.000976562C3.58172 0.000976562 0 3.5827 0 8.00098C0 12.4193 3.58172 16.001 8 16.001Z"
+                  fill="#9D5CD0" />
+                <path d="M10.9102 4.49268L11.9545 5.53702L5.20523 12.2863L4.16089 11.2419L10.9102 4.49268Z"
+                  fill="white" />
+                <path d="M11.793 11.0811L10.7486 12.1254L3.99936 5.37613L5.04371 4.33179L11.793 11.0811Z"
+                  fill="white" />
+              </svg>
+            </button> обеспечение нашей деятельности однозначно фиксирует необходимость
+            экономической целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия
+            представителей оппозиции могут быть рассмотрены&nbsp;<button class="btn tooltip projects__tooltip-btn"
+              data-tippy-content="В стремлении повысить качество" aria-label="всплывающее окно">
+              <svg class="marker" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.5 8C15.5 12.1421 12.1421 15.5 8 15.5C3.85786 15.5 0.5 12.1421 0.5 8C0.5 3.85786 3.85786 0.5 8 0.5C12.1421 0.5 15.5 3.85786 15.5 8Z"
+                  stroke="#9D5CD0"></path>
+                <path class="marker__path"
+                  d="M7.26154 6.4551H8.73846V13H7.26154V6.4551ZM8 4.90259C7.71282 4.90259 7.4718 4.81126 7.27692 4.62861C7.09231 4.44597 7 4.22273 7 3.9589C7 3.69508 7.09231 3.47184 7.27692 3.28919C7.4718 3.0964 7.71282 3 8 3C8.28718 3 8.52308 3.09132 8.70769 3.27397C8.90256 3.44647 9 3.66464 9 3.92846C9 4.20243 8.90256 4.43582 8.70769 4.62861C8.52308 4.81126 8.28718 4.90259 8 4.90259Z"
+                  fill="black"></path>
+              </svg><svg class="close-tooltip" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8 16.001C12.4183 16.001 16 12.4193 16 8.00098C16 3.5827 12.4183 0.000976562 8 0.000976562C3.58172 0.000976562 0 3.5827 0 8.00098C0 12.4193 3.58172 16.001 8 16.001Z"
+                  fill="#9D5CD0" />
+                <path d="M10.9102 4.49268L11.9545 5.53702L5.20523 12.2863L4.16089 11.2419L10.9102 4.49268Z"
+                  fill="white" />
+                <path d="M11.793 11.0811L10.7486 12.1254L3.99936 5.37613L5.04371 4.33179L11.793 11.0811Z"
+                  fill="white" />
+              </svg>
+            </button> исключительно в&nbsp;разрезе маркетинговых
+            и&nbsp;финансовых&nbsp;<button class="btn tooltip projects__tooltip-btn"
+              data-tippy-content="Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции"
+              aria-label="всплывающее окно">
+              <svg class="marker" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.5 8C15.5 12.1421 12.1421 15.5 8 15.5C3.85786 15.5 0.5 12.1421 0.5 8C0.5 3.85786 3.85786 0.5 8 0.5C12.1421 0.5 15.5 3.85786 15.5 8Z"
+                  stroke="#9D5CD0"></path>
+                <path class="marker__path"
+                  d="M7.26154 6.4551H8.73846V13H7.26154V6.4551ZM8 4.90259C7.71282 4.90259 7.4718 4.81126 7.27692 4.62861C7.09231 4.44597 7 4.22273 7 3.9589C7 3.69508 7.09231 3.47184 7.27692 3.28919C7.4718 3.0964 7.71282 3 8 3C8.28718 3 8.52308 3.09132 8.70769 3.27397C8.90256 3.44647 9 3.66464 9 3.92846C9 4.20243 8.90256 4.43582 8.70769 4.62861C8.52308 4.81126 8.28718 4.90259 8 4.90259Z"
+                  fill="black"></path>
+              </svg>
+              <svg class="close-tooltip" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8 16.001C12.4183 16.001 16 12.4193 16 8.00098C16 3.5827 12.4183 0.000976562 8 0.000976562C3.58172 0.000976562 0 3.5827 0 8.00098C0 12.4193 3.58172 16.001 8 16.001Z"
+                  fill="#9D5CD0" />
+                <path d="M10.9102 4.49268L11.9545 5.53702L5.20523 12.2863L4.16089 11.2419L10.9102 4.49268Z"
+                  fill="white" />
+                <path d="M11.793 11.0811L10.7486 12.1254L3.99936 5.37613L5.04371 4.33179L11.793 11.0811Z"
+                  fill="white" />
+              </svg></button> предпосылок. Банальные, но&nbsp;неопровержимые выводы,
+            а&nbsp;также
+            представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые,
+            в&nbsp;свою очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени
+            совершённой неузнаваемости. Подробнее: <a class="link projects__link" href="#">
+              <span class="projects__link-text">blanchard-art.ru/projects
+              </span>
+            </a></p>
+          <div class="partners">
+            <h3 class="title projects__partners-title">Партнёры проектов:</h3>
+            <div class="swiper partners__swiper">
+              <div class="swiper-wrapper partners__swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="partners__card"><a class="link partners__link" href="#"><img
+                        class="partners__logo-img image" src="img/partners-logo/partner-logo-1.png"
+                        alt="Партнёр проекта"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="partners__card"><a class="link partners__link" href="#"><img
+                        class="partners__logo-img image" src="img/partners-logo/partner-logo-2.png"
+                        alt="Партнёр проекта"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="partners__card"><a class="link partners__link" href="#"><img
+                        class="partners__logo-img image" src="img/partners-logo/partner-logo-3.png"
+                        alt="Партнёр проекта"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="partners__card"><a class="link partners__link" href="#"><img
+                        class="partners__logo-img image" src="img/partners-logo/partner-logo-4.png"
+                        alt="Партнёр проекта"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="partners__card"><a class="link partners__link" href="#"><img
+                        class="partners__logo-img image" src="img/partners-logo/partner-logo-5.png"
+                        alt="Партнёр проекта"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="partners__card"><a class="link partners__link" href="#"><img
+                        class="partners__logo-img image" src="img/partners-logo/partner-logo-6.png"
+                        alt="Партнёр проекта"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="partners__card"><a class="link partners__link" href="#"><img
+                        class="partners__logo-img image" src="img/partners-logo/partner-logo-7.png"
+                        alt="Партнёр проекта"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="partners__card"><a class="link partners__link" href="#"><img
+                        class="partners__logo-img image" src="img/partners-logo/partner-logo-8.png"
+                        alt="Партнёр проекта"></a></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="partners__card"><a class="link partners__link" href="#"><img
+                        class="partners__logo-img image" src="img/partners-logo/partner-logo-9.png"
+                        alt="Партнёр проекта"></a></div>
+                </div>
+                <div class="swiper-slide partners__invisible-slide">
+                </div>
+              </div>
+              <div class="swiper-button-prev partners__button-prev"></div>
+              <div class="swiper-button-next partners__button-next"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section contacts" id="contacts">
+        <div class="container contacts__container">
+          <div class="contacts__content">
+            <div class="contacts__first-item">
+              <h3 class="title contacts__title">Шоурум № 4</h3>
+              <address class="contacts__adress">Леонтьевский переулок, дом 5/1</address>
+            </div>
+            <div class="contacts__second-item">
+              <form class="form contacts__form" id="form" action="https://jsonplaceholder.typicode.com/posts"
+                method="post">
+                <label class="form__label"><input class="input contacts__form-item contacts__input" id="name"
+                    data-validate-field="name" type="text" name="name" placeholder="Имя*" autocomplete="off"></label>
+                <label class="form__label"><input class="input contacts__form-item contacts__input" id="phone"
+                    data-validate-field="tel" data-validate-rules="phone" type="tel" name="phone"
+                    placeholder="Телефон*"></label>
+                <button class="btn contacts__btn contacts__form-item" type="submit">
+                  <span class="contacts__btn-text">Заказать</span>
+                  <span class="contacts__mobile-invisible">обратный&nbsp;звонок</span>
+                </button>
+              </form>
+            </div>
+            <div class="contacts__third-item">
+              <h3 class="title contacts__heading">Связаться в&nbsp;один&nbsp;клик</h3>
+              <ul class="list">
+                <li class="contacts__social-item">
+                  <a class="link contacts__social-link" href="https://www.whatsapp.com" aria-label="вотсап"
+                    target="_blank">
+                    <svg class="contacts__svg-icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_191243_648)">
+                        <path
+                          d="M20 39.375C30.7005 39.375 39.375 30.7005 39.375 20C39.375 9.29948 30.7005 0.625 20 0.625C9.29948 0.625 0.625 9.29948 0.625 20C0.625 30.7005 9.29948 39.375 20 39.375Z"
+                          fill="#30BF39"></path>
+                        <path
+                          d="M25.875 21.751C25.625 21.626 24.3125 20.876 24.0625 20.8135C23.8125 20.6885 23.625 20.6885 23.4375 20.9385C23.25 21.1885 22.6875 21.8135 22.5625 21.9385C22.375 22.126 22.25 22.126 22 22.001C21.75 21.876 20.875 21.5635 19.875 20.5635C19.125 19.8135 18.5625 18.9385 18.4375 18.626C18.3125 18.376 18.4375 18.1885 18.5625 18.0635C18.6875 17.9385 18.8125 17.751 19 17.626C19.1875 17.501 19.1875 17.376 19.3125 17.1885C19.4375 17.001 19.375 16.876 19.3125 16.6885C19.25 16.501 18.75 15.1885 18.5625 14.626C18.375 14.0635 18.125 14.1885 18 14.126C17.8125 14.126 17.6875 14.0635 17.5 14.0635C17.25 14.0635 16.9375 14.1885 16.75 14.376C16.5 14.626 15.75 15.251 15.75 16.5635C15.75 17.876 16.625 19.251 16.75 19.376C16.875 19.5635 18.5 22.4385 21.1875 23.626C23.875 24.8135 23.875 24.4385 24.375 24.4385C24.875 24.4385 26 23.8135 26.25 23.251C26.5 22.626 26.5 22.0635 26.4375 22.001C26.3125 22.001 26.125 21.9385 25.875 21.751ZM20.875 28.1885C19.125 28.1885 17.5 27.6885 16.0625 26.751L12.6875 27.8135L13.8125 24.5635C12.75 23.0635 12.125 21.251 12.125 19.376C12.125 14.501 16.0625 10.5635 20.9375 10.5635C25.8125 10.5635 29.6875 14.501 29.6875 19.376C29.6875 24.251 25.75 28.1885 20.875 28.1885ZM20.875 8.81348C15.0625 8.81348 10.3125 13.5635 10.3125 19.376C10.3125 21.3135 10.8125 23.1885 11.8125 24.8135L9.875 30.501L15.75 28.626C17.3125 29.501 19.0625 29.9385 20.875 29.9385C26.6875 29.9385 31.4375 25.1885 31.4375 19.376C31.4375 13.5635 26.75 8.81348 20.875 8.81348Z"
+                          fill="white"></path>
+                      </g>
+                      <defs>
+                        <clippath id="clip0_191243_648">
+                          <rect width="40" height="40" fill="white"></rect>
+                        </clippath>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li class="contacts__social-item">
+                  <a class="link contacts__social-link" href="https://telegram.org" aria-label="телеграм"
+                    target="_blank">
+                    <svg class="contacts__svg-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50Z"
+                        fill="#26A5E4"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M11.3176 24.7364L25.8971 18.4564C32.8399 15.5686 34.2825 15.067 35.2228 15.0505C35.4297 15.0468 35.8921 15.0981 36.1916 15.3411C36.4446 15.5463 36.5141 15.8236 36.5474 16.0181C36.5808 16.2126 36.6222 16.656 36.5892 17.0023C36.213 20.9553 34.585 30.5485 33.7568 34.976C33.4063 36.8495 32.7168 37.4777 32.0483 37.5391C30.5965 37.6727 29.4941 36.5796 28.0879 35.6579L22.5087 31.9103C20.0404 30.2838 21.6405 29.3898 23.0472 27.9288C23.4153 27.5463 29.812 21.7281 29.9357 21.2003C29.9507 21.1343 29.9656 20.8883 29.8194 20.7583C29.6733 20.6283 29.4574 20.6733 29.3018 20.7081C29.0811 20.7582 25.5661 23.0815 18.7567 27.6781C17.7589 28.3633 16.8552 28.6971 16.0455 28.6796C15.1529 28.6603 13.4358 28.1749 12.1594 27.76C10.5937 27.2511 9.34935 26.982 9.45775 26.1177C9.51415 25.6675 10.1341 25.2072 11.3176 24.7365L11.3176 24.7364Z"
+                        fill="white"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="map" id="map"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="social-items">
+            <ul class="list footer__social-items">
+              <li class="footer__social-item">
+                <a class="link footer__social-link" href="https://vk.com" aria-label="вконтакте" target="_blank">
+                  <svg class="footer__svg-icon" width="45" height="45" viewBox="0 0 45 45" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="footer__icon-path"
+                      d="M22.5 0C10.074 0 0 10.0736 0 22.5C0 34.9264 10.074 45 22.5 45C34.926 45 45 34.9264 45 22.5C45 10.0736 34.926 0 22.5 0ZM33.9132 24.9335C34.9619 25.9577 36.0714 26.9217 37.0128 28.0519C37.4299 28.5519 37.823 29.0688 38.1222 29.6503C38.5495 30.4794 38.1637 31.3886 37.4216 31.4379L32.812 31.4369C31.6215 31.5354 30.6741 31.0553 29.8754 30.2414C29.2378 29.5927 28.6462 28.8999 28.0321 28.2292C27.7812 27.9539 27.517 27.6947 27.2021 27.4907C26.5737 27.0819 26.0277 27.2072 25.6677 27.8636C25.3008 28.5316 25.217 29.2719 25.182 30.0153C25.1319 31.1022 24.8041 31.3863 23.7135 31.4374C21.3832 31.5465 19.1721 31.1929 17.117 30.0181C15.3041 28.9818 13.901 27.5193 12.6783 25.8634C10.2973 22.6353 8.47381 19.0924 6.8354 15.4478C6.46665 14.627 6.73642 14.1878 7.64194 14.1707C9.14639 14.1417 10.6508 14.1454 12.1553 14.1694C12.7676 14.179 13.1727 14.5294 13.4079 15.1071C14.2209 17.1074 15.2176 19.0105 16.4665 20.7755C16.7994 21.2455 17.1391 21.7142 17.623 22.0461C18.157 22.4125 18.5639 22.2915 18.8158 21.6953C18.9769 21.3164 19.0464 20.9113 19.0814 20.5053C19.2011 19.1145 19.2153 17.7242 19.0082 16.339C18.8793 15.4722 18.3918 14.9124 17.5277 14.7485C17.0876 14.6652 17.152 14.5022 17.3661 14.2508C17.7376 13.8163 18.0856 13.5474 18.7812 13.5474L23.9893 13.5465C24.8101 13.7076 24.9942 14.0759 25.1056 14.9027L25.1102 20.6903C25.1006 21.0103 25.2709 21.9586 25.8454 22.1681C26.3058 22.32 26.6096 21.9508 26.8849 21.6594C28.1339 20.334 29.0237 18.7697 29.8206 17.1506C30.1723 16.4366 30.4757 15.6978 30.7703 14.9575C30.9895 14.4101 31.3301 14.1408 31.9479 14.15L36.9631 14.156C37.1108 14.156 37.2609 14.1574 37.4073 14.1827C38.2525 14.3273 38.4841 14.6909 38.2226 15.5154C37.811 16.8109 37.0114 17.89 36.2297 18.9718C35.3919 20.1301 34.4983 21.2478 33.6687 22.4111C32.9064 23.4746 32.9667 24.01 33.9132 24.9335Z"
+                      fill="#CACACA"></path>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a class="link footer__social-link" href="https://ok.ru" aria-label="одноклассники" target="_blank">
+                  <svg class="footer__svg-icon" width="45" height="45" viewBox="0 0 45 45" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="footer__icon-path"
+                      d="M19.279 14.9859C19.279 16.8409 20.7828 18.3449 22.6379 18.3449C24.4929 18.3449 25.9967 16.8409 25.9967 14.9859C25.9967 13.1309 24.4929 11.6271 22.6379 11.6271C20.7828 11.6271 19.279 13.1309 19.279 14.9859Z"
+                      fill="#CACACA"></path>
+                    <path class="footer__icon-path" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M22.5 45C34.9264 45 45 34.9264 45 22.5C45 10.0736 34.9264 0 22.5 0C10.0736 0 0 10.0736 0 22.5C0 34.9264 10.0736 45 22.5 45ZM14.5125 14.9858C14.5125 10.4984 18.1503 6.86047 22.6379 6.86047C27.1254 6.86047 30.7632 10.4984 30.7632 14.9858C30.7632 19.4734 27.1254 23.1115 22.6379 23.1115C18.1503 23.1115 14.5125 19.4734 14.5125 14.9858ZM30.8117 27.291C30.7086 27.3737 28.7593 28.9142 25.5064 29.5769L30.4165 34.4432C31.28 35.3053 31.2811 36.7042 30.419 37.5677C29.5569 38.431 28.1583 38.4324 27.2945 37.5701L22.5276 32.928L18.1979 37.5402C17.7644 37.9899 17.1862 38.216 16.6074 38.216C16.0553 38.216 15.5027 38.0106 15.074 37.5972C14.1956 36.7502 14.1701 35.3516 15.0171 34.4733L19.6777 29.6025C16.3336 28.9555 14.3039 27.3749 14.1993 27.291C13.2475 26.5277 13.0946 25.1372 13.8579 24.1852C14.6212 23.2334 16.0115 23.0805 16.9636 23.8437C16.9837 23.86 19.1067 25.4549 22.5275 25.4572C25.9483 25.4549 28.0273 23.86 28.0474 23.8437C28.9995 23.0805 30.3899 23.2334 31.1531 24.1852C31.9165 25.1372 31.7636 26.5277 30.8117 27.291Z"
+                      fill="#CACACA"></path>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <a class="link logo footer__logo"><img class="logo__image" src="img/svg/logo.svg"
+              alt="Логотип компании Бланчард"></a>
+        </div>
+      </div>
+    </footer>
+    <!-- <div class="modal">
+      <div class="modal__container" data-target="woman-with-rake">
+        <button class="btn close-btn">
+          <div class="modal-content">
+            <picture></picture>
+            <div class="picture-info">
+              <h3 class="title modal__title">Казимир Малевич</h3>
+              <h4 class="title modal__painting-title"></h4>
+              <span class="painting-date">1931–1932</span>
+              <p class="paragraph">Картина из&nbsp;второй серии крестьянского цикла работ Казимира Малевича. Художник принялся за&nbsp;её&nbsp;создание в&nbsp;1930&ndash;1931&nbsp;годах, после того, как первый цикл был утерян после Берлинской и&nbsp;Варшавской выставок в&nbsp;1927&nbsp;году.</p>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div> -->
+  </div>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+  <script src="https://unpkg.com/accordion-js@3.3.2/dist/accordion.min.js"></script>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="libs/inputmask.min.js"></script>
+  <script src="libs/swiper-bundle.min.js"></script>
+  <script src="libs/choices.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU">
+  </script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
